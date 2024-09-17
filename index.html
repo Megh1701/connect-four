@@ -4,15 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Connect-4</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" id="favicon" type="image/svg+xml" href="media/favicon-red (1).svg">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const favicons = [
+                'media/favicon-red (1).svg',
+                'media/favicon-yellow.svg',
+                
+            ];
+            let index = 0;
+
+            function changeFavicon() {
+                index = (index + 1) % favicons.length;
+                const link = document.getElementById('favicon');
+                link.href = favicons[index];
+            }
+
+            setInterval(changeFavicon,2000); 
+        });
+    </script>
 </head>
 
 <body>
     <nav>
         <button id="menu"><a
                 href="https://en.wikipedia.org/wiki/Connect_Four#:~:text=The%20two%20players%20then%20alternate,the%20game%20is%20a%20draw.">RULES</a></button>
-        <img src="logo.svg" alt="">
+        <img src="media/logo.svg" alt="">
         <button id="re">RESTART</button>
     </nav>
 
