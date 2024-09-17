@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <button id="menu"><a
+                href="https://en.wikipedia.org/wiki/Connect_Four#:~:text=The%20two%20players%20then%20alternate,the%20game%20is%20a%20draw.">RULES</a></button>
+        <img src="logo.svg" alt="">
+        <button id="re">RESTART</button>
+    </nav>
+
+
+    <div id="main">
+
+        <div id="track">
+            <svg width="38" height="36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                data-testid="color-red">
+                <defs>
+                    <filter x="-17.2%" y="-16.4%" width="134.4%" height="156.8%" filterUnits="objectBoundingBox" id="a">
+                        <feMorphology radius="3" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1">
+                        </feMorphology>
+                        <feOffset dy="5" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+                        <feComposite in="shadowOffsetOuter1" in2="SourceAlpha" operator="out"
+                            result="shadowOffsetOuter1"></feComposite>
+                        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" in="shadowOffsetOuter1">
+                        </feColorMatrix>
+                    </filter>
+                    <path
+                        d="m882.01 132.377 10.932-8.157a5 5 0 0 1 5.96-.015l11.068 8.172A5 5 0 0 1 912 136.4v6.6a5 5 0 0 1-5 5h-22a5 5 0 0 1-5-5v-6.616a5 5 0 0 1 2.01-4.007Z"
+                        id="b"></path>
+                </defs>
+                <g transform="matrix(1 0 0 -1 -877 156)" fill="none" fill-rule="evenodd">
+                    <use fill="#000" filter="url(#a)" xlink:href="#b"></use>
+                    <path stroke="#000" stroke-width="3"
+                        d="M895.916 121.727a6.49 6.49 0 0 1 3.877 1.271l11.068 8.173a6.5 6.5 0 0 1 2.639 5.229v6.6a6.48 6.48 0 0 1-1.904 4.596A6.48 6.48 0 0 1 907 149.5h-22a6.48 6.48 0 0 1-4.596-1.904A6.48 6.48 0 0 1 878.5 143v-6.616a6.5 6.5 0 0 1 2.613-5.21l10.932-8.157a6.49 6.49 0 0 1 3.87-1.29Z"
+                        fill="palegreen"></path>
+                </g>
+            </svg>
+        </div>
+
+        <div id="main-start">
+            <div id="p1">
+                <svg class="happy" width="50px" height="50px" viewBox="0 0 54 59" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" data-testid="icon">
+                    <title>player-one</title>
+                    <g id="Designs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="player-one">
+                            <circle id="Oval-Copy-21" fill="#000000" cx="27" cy="27" r="27"></circle>
+                            <circle id="Oval-Copy-40" fill="#000000" cx="27" cy="32" r="27"></circle>
+                            <circle id="Oval-Copy-11" fill="#FD6687" cx="27" cy="27" r="24"></circle>
+                            <g id="Group-8" transform="translate(19.000000, 17.000000)" stroke="#000000"
+                                stroke-width="3">
+                                <path
+                                    d="M6,26.75 C12.627417,26.75 18,21.377417 18,14.75 C18,8.122583 12.627417,2.75 6,2.75"
+                                    id="Oval-Copy-11"
+                                    transform="translate(12.000000, 14.750000) rotate(90.000000) translate(-12.000000, -14.750000) ">
+                                </path>
+                                <g id="Group-7" transform="translate(9.750000, 0.000000)">
+                                    <line x1="0.5" y1="0" x2="0.5" y2="5.9844035" id="Path"></line>
+                                    <line x1="10.5" y1="0" x2="10.5" y2="5.9844035" id="Path-Copy"></line>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                <h2>Player 1</h2>
+                <h4 class="p1-points"></h4>
+            </div>
+            <div id="box">
+
+            </div>
+            <!-- <div class="tile">
+
+        </div> -->
+            <div id="p2">
+                <svg class="happy" width="50px" height="50px" viewBox="0 0 54 59" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" data-testid="icon">
+                    <title>player-two</title>
+                    <g id="Designs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="player-two"
+                            transform="translate(27.000000, 29.500000) scale(-1, 1) translate(-27.000000, -29.500000) ">
+                            <circle id="Oval-Copy-21" fill="#000000" cx="27" cy="27" r="27"></circle>
+                            <circle id="Oval-Copy-40" fill="#000000" cx="27" cy="32" r="27"></circle>
+                            <circle id="Oval-Copy-11" fill="#FFCE67" cx="27" cy="27" r="24"></circle>
+                            <g id="Group-8" transform="translate(19.000000, 17.000000)" stroke="#000000"
+                                stroke-width="3">
+                                <path
+                                    d="M6,26.75 C12.627417,26.75 18,21.377417 18,14.75 C18,8.122583 12.627417,2.75 6,2.75"
+                                    id="Oval-Copy-11"
+                                    transform="translate(12.000000, 14.750000) rotate(90.000000) translate(-12.000000, -14.750000) ">
+                                </path>
+                                <g id="Group-7" transform="translate(9.750000, 0.000000)">
+                                    <line x1="0.5" y1="0" x2="0.5" y2="5.9844035" id="Path"></line>
+                                    <line x1="10.5" y1="0" x2="10.5" y2="5.9844035" id="Path-Copy"></line>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                <h2>Player 2</h2>
+                <h4 class="p2-points"></h4>
+            </div>
+        </div>
+        <div class="timer">
+            <div class="timer-background">
+                <h3 class="player-turn">
+                    Player's 1 Turn
+                </h3>
+                <h1 class="sec">30</h3>
+            </div>
+        </div>
+
+    </div>
+    <section type="rules" class="sc-bcXHqe blPCBX"
+        style="opacity: 1; transform: translateX(0px) scale(1) rotate(0deg) translateZ(0px);">
+        <div class="sc-iBYQkv iKZxhF">
+            <h1 class="sc-ftTHYK cFXafN">Rules</h1>
+            <div class="sc-pyfCe evLUYz">
+                <div>
+                    <h3 class="sc-kDvujY dcFUuf">objective</h3>
+                    <p>Be the first player to connect 4 of the same colored discs in a row (either vertically,
+                        horizontally, or diagonally).</p>
+                </div>
+                <div>
+                    <h3 class="sc-kDvujY dcFUuf">how to play</h3>
+                    <div class="sc-jrcTuL bMlJCq">
+                        <h4>1</h4><span>Red goes first in the first game.</span>
+                    </div>
+                    <div class="sc-jrcTuL bMlJCq">
+                        <h4>2</h4><span>Players must alternate turns, and only one disc can be dropped in each
+                            turn.</span>
+                    </div>
+                    <div class="sc-jrcTuL bMlJCq">
+                        <h4>3</h4><span>The game ends when there is a 4-in-a-row or a stalemate.</span>
+                    </div>
+                    <div class="sc-jrcTuL bMlJCq">
+                        <h4>4</h4><span>The starter of the previous game goes second on the next game.</span>
+                    </div>
+                </div>
+                <div id="pls-move"><svg id="confirmButton" width="70px" height="75px" viewBox="0 0 70 75"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        data-testid="confirm-button">
+                        <title>icon-check</title>
+                        <g id="Designs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="icon-check">
+                                <circle id="Oval-Copy-37" fill="#000000" cx="35" cy="35" r="35"></circle>
+                                <circle id="Oval-Copy-38" fill="#000000" cx="35" cy="40" r="35"></circle>
+                                <circle id="Oval-Copy-39" fill="#FD6687" cx="35" cy="35" r="32"></circle>
+                                <polyline id="Path" stroke="#FFFFFF" stroke-width="3"
+                                    points="20 34.5819497 30.2640104 44.84596 50.1099704 25"></polyline>
+                            </g>
+                        </g>
+                    </svg></div>
+            </div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+
+</html>
