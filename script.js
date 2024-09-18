@@ -7,8 +7,7 @@ let playerRed = "R";
 let playerYellow = "Y";
 let gameover = false;
 let currentPlayer = "R"; 
-let player1score = 0;
-let player2score = 0;
+
 let box = document.querySelector("#box");
 let tracker = document.querySelector("#track");
 let restartButton = document.querySelector("#re");
