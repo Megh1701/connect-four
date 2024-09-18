@@ -42,6 +42,16 @@ function restartGame() {
 
 function setgame() {
     board = Array(6).fill(null).map(() => Array(7).fill(null));
+
+    //if i use normal like without .map then it will gave same etle map vaprva thi every time new array apse and ena andar red ke yellow just like that array fill thata rehse and
+    //and darek vakhte coin put thay ena pela jose ke null 6 if it is null only then it will append coin 
+    // ['R', null, null, null, null, null, null],
+    // [null, null, null, null, null, null, null],
+    // [null, null, null, null, null, null, null],
+    // [null, null, null, null, null, null, null],
+    // [null, null, null, null, null, null, null],
+    // [null, null, null, null, null, null, null]
+ 
     clutter = "";
 
     for (let row = 0; row <= 5; row++) {
@@ -109,10 +119,10 @@ function checkWin(row, col) {
     if (!player) return false;
 
     return (
-        checkDirection(row, col, 1, 0, player) ||
-        checkDirection(row, col, 0, 1, player) ||
-        checkDirection(row, col, 1, 1, player) ||
-        checkDirection(row, col, 1, -1, player)
+        checkDirection(row, col, 1, 0, player) || //check karse vertical mate
+        checkDirection(row, col, 0, 1, player) ||//check karse horizontal mate
+        checkDirection(row, col, 1, 1, player) ||//diagonal forward mate
+        checkDirection(row, col, 1, -1, player)//diagonal backward mate
     );
 }
 
@@ -159,7 +169,7 @@ function checkDraw() {
         if (board[0][col] === null) {
             return false;
         }
-    }
+    } 
     return true; 
 }
 
@@ -232,7 +242,7 @@ confirmButton.addEventListener('click', () => {
     setgame();
 });
 
-const rulesButton = document.getElementById('confitm');
+const rulesButton = document.getElementById('confirmButton');
 
 rulesButton.addEventListener('click', () => {
     const rulesSection = document.querySelector('section[type="rules"]');
