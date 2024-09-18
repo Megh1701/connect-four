@@ -195,15 +195,23 @@ transform: translate(45%,0%);
     position: absolute;
     top: 13em;
 }
-.timer{
-    z-index: 1;
+
+.timer {
+    z-index: 1000; 
     width: 100vw;
-    border-radius:80px 80px 0px 0px;
-    height: 100%;
+    height: 100px;
     background-color: #5C2DD5;
     display: flex;
     justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0; 
+    left: 0;
+    border-radius: 80px 80px 0 0;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2); 
+    overflow: hidden; 
 }
+
 #pls-move{
     display: flex;
     justify-content: center;
@@ -239,7 +247,7 @@ transform: translate(45%,0%);
     box-shadow: 0px 1rem 0px black;
 }
 .iKZxhF {
-    margin: 1.5rem 3.4rem 0rem;
+    margin: 0rem 0.4rem 0rem;
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -248,7 +256,7 @@ transform: translate(45%,0%);
 }
 .cFXafN {
     color: #5C2DD5;
-    font-size:rem;
+    font-size:2rem;
     line-height: 71px;
     text-transform: uppercase;
     text-align: center;
@@ -256,7 +264,7 @@ transform: translate(45%,0%);
 .evLUYz {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 1.3rem;
     font-size: 1.2rem;
 }
 
@@ -314,3 +322,327 @@ section[type="rules"] {
     }
 }
 
+
+
+@media (max-width: 599px) {
+    #main {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    nav {
+      top: -10px;
+        gap: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+
+     #p2 {
+        width: 90px;
+        height: 90px;
+        margin-top: 10px;
+        position: absolute;
+        top: 5%;
+        left: 75%;
+    }
+    #p1{
+        width: 90px;
+        height: 90px;
+        margin-top: 10px;
+        position: absolute;
+   
+        top: 5%;
+        left: 5%;
+    }
+
+    #box {
+        top:35%;
+        width: 90%;
+        height: auto;
+        margin-top: 1rem;
+    }
+
+    .tile {
+        width: 45px;
+        height: 45px;
+        margin: 5px;
+    }
+
+    #main-start {
+        display: flex;
+        flex-direction: row; 
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .coin {
+        width: 40px;
+        height: 40px;
+    }
+    .evLUYz{
+        gap: 1.5rem;
+    }
+    .happy{
+        position: relative;
+        top: 0;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    #main {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    #box {
+        width: 505px;
+        height: auto;
+    }
+
+    .tile {
+        width: 55px;
+        height: 55px;
+    }
+
+     #p2 {
+        position: absolute;
+        top: 5%;
+        width: 110px;
+        height: 110px;
+        left: 75%;
+    }
+    #p1{
+        position: absolute;
+        top: 5%;
+        width: 110px;
+        height: 110px;
+        left: 5%;
+    }
+.happy{
+    position: relative;
+    top: 0;
+}
+    .coin {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (min-width: 1025px) {
+    #main {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    nav {
+        gap: 150px;
+    }
+
+    #box {
+        width: 550px;
+        height: 500px;
+    }
+
+    .tile {
+        width: 60px;
+        height: 60px;
+        margin: 8px;
+    }
+
+    #p1, #p2 {
+        
+        width: 120px;
+        height: 130px;
+    }
+
+    .coin {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+
+@media (max-width: 599px) {
+    section {
+        width: 90%;
+   
+        font-size: 0.8rem;
+    }
+
+    section[type="rules"] {
+  
+        transform: translate(0%, 0%);
+        padding: 10px;
+        width: 90%;
+    }
+    section p,.section-font{
+        font-size: 0.7rem;
+    }
+
+    .timer-background {
+        width: 100px;
+        height: 90px;
+    }
+    #track{
+        display: none;
+    }
+    .fade-scale-in {
+        font-size: 0.6rem; 
+    }
+
+    #pls-move {
+        font-size: 0.7rem; 
+    }
+
+    
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+#track{
+    display: none;
+}
+
+    section {
+        width: 80%;
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    section[type="rules"] {
+        top: 2%;
+        transform: translate(10%, 0%);
+      
+        width: 90%;
+    }
+    section p,.section-font{
+        font-size: 1rem; 
+    }
+    .timer-background {
+        width: 120px;
+        height: 110px;
+        position: fixed;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    section {
+        width: 70%;
+        padding: 20px;
+        font-size: 1rem;
+    }
+    section[type="rules"] {
+ 
+        transform: translate(20%, 0%);
+      
+        width: 80%;
+    }
+
+    .timer-background {
+        width: 130px;
+        height: 120px;
+        position: fixed;
+    }
+}
+@media (min-width: 494px) and (max-width: 598px) {
+   #box{
+    width:440px;
+   }
+}
+@media(max-width: 493px) {
+    #box{
+
+        width:400px;
+    }
+}
+
+@media (max-width: 599px) {
+    .timer {
+        height: 85px; 
+        border-radius: 60px 60px 0 0;
+        padding: 10px;
+    }
+
+    .timer-background {
+        width: 100px;
+        height: 80px;
+        font-size: 0.7rem; 
+    }
+
+    #pls-move {
+        font-size: 0.7rem; 
+    }
+}
+
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    .timer {
+        height: 85px; 
+        border-radius: 70px 70px 0 0;
+        padding: 15px;
+    }
+
+    .timer-background {
+        width: 120px;
+        height: 100px;
+        font-size: 0.8rem; 
+    }
+
+    #pls-move {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .timer {
+        height: 110px; 
+        border-radius: 80px 80px 0 0;
+        padding: 20px;
+    }
+
+    .timer-background {
+        width: 150px;
+        height: 120px;
+        font-size: 1rem; 
+    }
+
+    #pls-move {
+        font-size: 1rem;
+    }
+}
+@media (min-height: 850px) and (max-height: 1000px) {
+    .timer {
+       
+        bottom: 29%; 
+    }
+    #box{
+        margin-top: 75px;
+    }
+}
+@media (min-height: 750px) and (max-height: 849px) {
+    .timer { height: 100px;
+        bottom: 22%; 
+        
+    }
+    #box{
+        margin-top: 75px;
+    }
+}
+
+@media (min-height: 600px) and (max-height: 728px) {
+    .timer-background{
+        width: 110px;
+        height: 65px;
+        font-size: 0.7rem;
+        
+    }
+    .timer{
+        height: 60px;
+    }
+}

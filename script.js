@@ -233,7 +233,7 @@ confirmButton.addEventListener('click', () => {
     setgame();
 });
 
-const rulesButton = document.getElementById('rulesButton');
+const rulesButton = document.getElementById('confitm');
 
 rulesButton.addEventListener('click', () => {
     const rulesSection = document.querySelector('section[type="rules"]');
