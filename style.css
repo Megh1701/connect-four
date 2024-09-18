@@ -141,6 +141,27 @@ gap: 4rem;
     flex-direction: column;
 }
 
+#github-link {
+    z-index: 100;
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+    background-color: #000;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#github-link a {
+    color: #FFF; 
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#github-link a:hover {
+    color: #FD6687; 
+}
+
 #p2{
     height: 130px;
     width :120px;
@@ -570,6 +591,7 @@ section[type="rules"] {
     }
 
     .timer-background {
+        position: fixed;
         width: 100px;
         height: 80px;
         font-size: 0.7rem; 
