@@ -20,6 +20,7 @@ let timerbg = document.querySelector(".timer-background");
 let playerturn = document.querySelector(".player-turn");
 const wintext = document.createElement("h1");
 
+
 wintext.style.fontWeight = "bold"; 
 wintext.style.textAlign = "center"; 
 let board = [];
@@ -78,6 +79,7 @@ function findLowestEmptyRow(col) {
 }
 
 function setcoin(event) {
+    console.log(event)
     if (gameover) return;
 
     const clickedElement = event.target;
@@ -173,13 +175,6 @@ function checkDraw() {
     return true; 
 }
 
-box.addEventListener('mousemove', function(event) {
-    const boxRect = box.getBoundingClientRect();
-    const tileWidth = boxRect.width / cols;
-    let col = Math.floor((event.clientX - boxRect.left) / tileWidth);
-    if (col < 0 || col >= cols) return;
-    tracker.style.left = `${col * tileWidth + boxRect.left}px`;
-});
 
 function change() {
     if (currentPlayer === playerRed) {
@@ -255,4 +250,65 @@ rulesButton.addEventListener('click', () => {
         });
     }
 });
+box.addEventListener('mousemove', function(event) {
+
+    const tileWidth = boxRect.width / cols;
+  
+    let col = Math.floor((event.clientX - boxRect.left) / tileWidth);
+    console.log(col * tileWidth + boxRect.left)
+    if (col < 0 || col >= cols) return;
+    tracker.style.left = `${col * tileWidth + boxRect.left+18}px`;
+});
+let boxRect = box.getBoundingClientRect();
+let tracksize=tracker.getBoundingClientRect()
+document.addEventListener('keyup', recordKey);
+function right(){
+    tracker.style.left = `${tracksize.x+75}px`;
+}
+
+console.log(tracksize.x-72)
+function left(){
+  tracker.style.left = `${tracksize.x-75}px`;
+}
+function space(){
+
+
+}
+function recordKey(e) {
+    console.log(`You pressed ${e.key}`);
+    
+    
+  switch(e.code){
+      case "ArrowRight":
+          right()
+          break
+      case  "ArrowLeft":
+          left()
+          break
+      case "space":
+          space()
+          break
+  
+      default:
+          // console.log("nothing")
+          // break;
+            
+      };
+   
+  }
+  
+// vercel analytics
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+
+    document.querySelectorAll('.cell').forEach(cell => {
+      cell.addEventListener('click', function() {
+        vercel.track('Cell Clicked', {
+          player: this.dataset.player,
+          column: this.dataset.column
+        });
+      });
+    });
+  });
 
