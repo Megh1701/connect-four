@@ -1,5 +1,4 @@
-import { balloons } from "/node_modules/balloons-js/dist/index.esm.js" ;
-
+import { balloons } from "balloons-js";
 
 let col;
 let row;
