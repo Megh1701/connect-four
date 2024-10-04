@@ -1,4 +1,3 @@
-import { balloons } from "balloons-js";
 
 let col;
 let row;
@@ -139,13 +138,13 @@ function showWinner(winningPlayer) {
         timerbg.textContent = "Game End";
         change();
         player1.append(wintext);
-        balloons()
+     
     } else if (winningPlayer === playerYellow) {
         player2.style.backgroundColor = '#FFCE67';  
         timerbg.textContent = "Game End";
         change();
         player2.append(wintext);
-        balloons()
+     
     }
 }
 
