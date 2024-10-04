@@ -1,3 +1,6 @@
+import { balloons } from "/node_modules/balloons-js/dist/index.esm.js" ;
+
+
 let col;
 let row;
 const rows = 6;
@@ -19,7 +22,6 @@ let timerElement = document.querySelector('.sec');
 let timerbg = document.querySelector(".timer-background");
 let playerturn = document.querySelector(".player-turn");
 const wintext = document.createElement("h1");
-
 
 wintext.style.fontWeight = "bold"; 
 wintext.style.textAlign = "center"; 
@@ -138,11 +140,13 @@ function showWinner(winningPlayer) {
         timerbg.textContent = "Game End";
         change();
         player1.append(wintext);
+        balloons()
     } else if (winningPlayer === playerYellow) {
         player2.style.backgroundColor = '#FFCE67';  
         timerbg.textContent = "Game End";
         change();
         player2.append(wintext);
+        balloons()
     }
 }
 
